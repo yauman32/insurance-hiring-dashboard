@@ -26,11 +26,3 @@ jobs:
 
       - name: Update Excel workbook
         run: python scraper.py
-
-      - name: Commit updated workbook
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add Insurance_Hiring_Dashboard.xlsx
-          git diff --cached --quiet || git commit -m "Daily Hong Kong jobs refresh"
-          git push
